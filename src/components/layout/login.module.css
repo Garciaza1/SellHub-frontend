@@ -1,0 +1,18 @@
+.buttonInvisible{
+    background-color: transparent;
+    border:0;
+    color: #fcfcfc;
+
+}
+button:hover{
+    color: #afadad;
+}
+
+a:hover{
+    color: #afadad;
+}
+hr{
+    color: rgb(2, 137, 255);
+    border-radius: 45px;
+    box-shadow: 0 0 5px red;
+}

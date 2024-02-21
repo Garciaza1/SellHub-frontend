@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: black;
+    color: #fcfcfc;
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar{
+    background-color: rgb(10, 10, 10);
+    color: #fcfcfc;
+    width: 98vw;
+    position: relative;
+    left: 1vw;
+    margin-bottom: 3%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: aqua;
+    box-shadow: 0 0 5px red;
+}
+
+.buttonInvisible{
+    background-color: transparent;
+    border:0;
+    color: #fcfcfc;
+
+}
+
+a{
+    text-decoration: none;
+    color: #fcfcfc;
+    text-shadow: 0 0 5px red;
+}
+
+a:hover{
+    cursor: pointer;    
+    text-shadow: 0 0 5px rgb(0, 255, 255);
+    color: aqua;
+    
+}
+
+footer{
+    background-color: rgb(10, 10, 10);
+    color: #fcfcfc;
+    width: 98vw;
+    position: relative;
+    left: 1vw;
+    border-style: solid;
+    border-width: 1px;
+    border-color: aqua;
+    box-shadow: 0 0 5px red;
+}
+
+.item{
+    list-style: none;
+    margin-right: 1em;
+}

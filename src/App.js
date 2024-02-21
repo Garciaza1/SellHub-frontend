@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Session from './helpers/session.js';
+import HomeLogged from './pages/homeLogged';
+import Home from './pages/home';
+import Login from './pages/login';
+import Cadastro from './pages/cadastro';
+import LogOut from './pages/LogOut';
+import Perfil from './pages/perfil';
+import Navbar from './components/layout/navbar.js';
+import Sidebar from './components/layout/sidebar';
+import Footer from './components/layout/footer';
 
 function App() {
+  const isUserLoggedIn = Session();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      {isUserLoggedIn && <Sidebar />}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/home' element={<HomeLogged />} />
+        <Route path='/Login' element={<Login />} />
+        <Route path='/Cadastro' element={<Cadastro />} />
+        <Route path='/perfil' element={<Perfil />} />
+        <Route path='/LogOut' element={<LogOut />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 }
 
 export default App;
+

@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+notas do editor{
+
+    a fazer:
+    front end:
+        terminar o perfil e ver pq não aparece nada na rota
+        ver o home e deixar com produtos ja cadastrados de quem é o produto e cada pagina de um espeficifo com o id de produto.
+
+    back end:
+        terminar os controllers e as ações de ver por exemplo quantas vendas e ou quantos clientes e produtos.
+        
+
+}

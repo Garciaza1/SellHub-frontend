@@ -1,0 +1,11 @@
+.home{
+    border-style: solid;
+    border-width: 1px;
+    border-color: aqua;
+    box-shadow: 0 0 5px red;
+}
+.span{
+    font-style: italic;
+    color: black;
+    text-shadow: 0 0 5px aqua;
+}

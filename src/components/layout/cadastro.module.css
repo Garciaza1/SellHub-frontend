@@ -1,0 +1,21 @@
+.container{
+    padding-top: 1%;
+}
+
+.buttonInvisible{
+    background-color: transparent;
+    border:0;
+    color: #fcfcfc;
+
+}
+button:hover{
+    color: #afadad;
+}
+
+a:hover{
+    color: #afadad;
+    text-decoration: none;
+}
+hr{
+    color: rgb(2, 137, 255);
+}
