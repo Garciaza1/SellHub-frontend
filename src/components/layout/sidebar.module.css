@@ -2,7 +2,7 @@
   background-color: rgb(10, 10, 10);
   top: 0;
   display: block;
-  position: fixed;
+  position: absolute;
   width: 8%;
   height: 110vh;
   padding: 10px;
@@ -17,10 +17,25 @@
   box-shadow: 0 0 5px red;
 }
 
-.logout {
-  margin-top: 260%;
+.sidebar span{
+
 }
 
+.sidebar ul {
+  position: absolute;
+  list-style-type: none;
+  margin-top: 3%;
+}
+
+.user{
+
+}
+
+.logout{
+  position: fixed;
+  margin-top: 34%;
+  width: 6%;
+}
 
 .sidebar li {
   padding: 10px;

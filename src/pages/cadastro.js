@@ -1,7 +1,7 @@
 import styles from '../components/layout/cadastro.module.css';
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import session from '../helpers/session';
 
 const Cadastro = () => {
@@ -19,7 +19,7 @@ const Cadastro = () => {
     e.preventDefault();
 
     try {
-      // ta quebrando aqui
+
       const response = await axios.post('http://localhost:5000/NewUser', {
         nome: name,
         email,

@@ -13,7 +13,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      // ta quebrando aqui
+      
       const response = await axios.post('http://localhost:5000/UserLogin', {
         email,
         senha: password
@@ -41,7 +41,7 @@ const Login = () => {
         console.error('Falha no login. Detalhes:', errorData);
       }
     } catch (error) {
-      if (error.code == "ERR_NETWORK") {
+      if (error.code === "ERR_NETWORK") {
         console.log("Conexão recusada pelo servidor");
       }
       console.error('Erro ao enviar solicitação:', error);
@@ -60,7 +60,7 @@ const Login = () => {
           <div className={`p-4`}>
             <div className={`d-flex align-items-center justify-content-center mt-4`}>
               <img src="" className={`img-fluid me-3`} style={{ height: '46px' }} alt="" />
-              <h2><strong>Finance Tracker</strong></h2>
+              <h2><strong>Sell Hub</strong></h2>
             </div>
             <div className='d-flex justify-content-center mb-3'>
               <hr className='col-4' />
@@ -100,7 +100,7 @@ const Login = () => {
                       </a>
                     </div>
 
-                    <div className={` text-center pt-2 px-3`}>
+                    <div className={`text-center pt-2 px-3`}>
                       <button type="submit" className={` ${styles.buttonInvisible}`} >
                         Entrar<i className={`fa-solid fa-right-to-bracket ms-2 pe-2`}></i>
                       </button>
@@ -117,9 +117,9 @@ const Login = () => {
                     <a href="">Não Tenho Cadastro</a>
 
 
-                    <div className={`pt-2`}>
+                    {/* <div className={`pt-2`}>
                       <a href="">Esqueci-me da senha!</a>
-                    </div>
+                    </div> */}
                   </div>
                 </form>
               </div>

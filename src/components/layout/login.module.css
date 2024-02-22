@@ -1,16 +1,16 @@
 .buttonInvisible{
     background-color: transparent;
     border:0;
-    color: #fcfcfc;
-
+    color: #afadad;
+    text-shadow: 0 0 5px red;
 }
+
 button:hover{
-    color: #afadad;
+    text-shadow: 0 0 5px aqua;
+    color: aqua;
+    cursor: pointer;
 }
 
-a:hover{
-    color: #afadad;
-}
 hr{
     color: rgb(2, 137, 255);
     border-radius: 45px;

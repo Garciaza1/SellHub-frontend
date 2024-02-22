@@ -5,7 +5,6 @@ const Session = () => {
     
     //local storage do login
     const logado = sessionStorage.getItem('logged')
-    console.log(logado);
     const user = sessionStorage.getItem('user')
     const token = sessionStorage.getItem('token')
 

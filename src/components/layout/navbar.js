@@ -32,7 +32,7 @@ function Navbar() {
                     ) : (
                         <div className="col-4 d-flex align-content-center p-3">
                             <a href="/">
-                                <FontAwesomeIcon icon={faChartLine} height="46" />
+                            <FontAwesomeIcon icon={faChartLine} className='pe-5 h-50' />
                                {/* { <img src={`.png`} alt="logo SellHub" height="46" className="me-3" />} */}
                                 </a>
                             <a href="/" style={{ textDecoration: 'none' }}>

@@ -24,7 +24,7 @@ function HomeLogged() {
                     </span>
 
                 </h1>
-            <main className={`main col-12 align-self-center bg-secondary rounded-3 ${styles.home}`}>
+            <main className={`main col-12 align-self-center bg- rounded-3 ${styles.home}`}>
                 <section className='px-5 d-flex justify-content-between my-5 valores'>
 
                     <div className='col-4 '>
