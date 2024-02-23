@@ -1,7 +1,7 @@
 import { React } from 'react'; //import { Link } from "react-router-dom"
 import styles from './sidebar.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faHouse, faFaceSadCry, faUserTie, faUsers, faDesktop } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faHouse, faFaceSadCry, faUserTie, faUsers, faDesktop, faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -32,6 +32,13 @@ function Sidebar() {
                         <a href="/products" className="text-light">
                             <FontAwesomeIcon icon={faDesktop} className='me-2' />
                             Products
+                        </a>
+                    </li>
+
+                    <li className="mb-3 rounded-4 ">
+                        <a href="/NewProduct" className="text-light">
+                            <FontAwesomeIcon icon={faCirclePlus} className='me-2' />
+                            New <br></br> Product
                         </a>
                     </li>
 

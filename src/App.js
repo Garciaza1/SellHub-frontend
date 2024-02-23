@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Session from './helpers/session.js';
 import HomeLogged from './pages/homeLogged';
+import NewProduct from './pages/newProduct.js';
 import Home from './pages/home';
 import Login from './pages/login';
 import Cadastro from './pages/cadastro';
@@ -24,6 +25,7 @@ function App() {
         <Route path='/Login' element={<Login />} />
         <Route path='/Cadastro' element={<Cadastro />} />
         <Route path='/perfil' element={<Perfil />} />
+        <Route path='/newProduct' element={<NewProduct />} />
         <Route path='/LogOut' element={<LogOut />} />
       </Routes>
       <Footer />

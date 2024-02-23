@@ -4,7 +4,14 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import session from '../helpers/session';
 
+
 const Cadastro = () => {
+
+  //verifica se esta logado
+  if (session()) {
+    window.location.href = '/home';
+  }
+
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -57,10 +64,6 @@ const Cadastro = () => {
   }
 
 
-  //verifica se esta logado
-  if (session()) {
-    window.location.href = '/home';
-  }
 
 
   return (
@@ -73,8 +76,8 @@ const Cadastro = () => {
               <div className="row justify-content-center">
                 <div className="col-8">
                   <div className="col-12 text-center">
-                    <img src={`KEVIN-1_vetor2.png`} className="img-fluid me-3" style={{ height: '46px' }} alt="logo Finance Tracker" />
-                    <h2><strong>Finance Tracker</strong></h2>
+                    <img src={`../../public/images.png`} className="img-fluid me-3" style={{ height: '46px' }} alt="logo Sell Hub" />
+                    <h2><strong>Sell Hub</strong></h2>
                   </div>
                   <div className='d-flex justify-content-center'>
                     <hr className='col-6' />
@@ -87,8 +90,6 @@ const Cadastro = () => {
                   </div>
 
                   <form onSubmit={handleCadastro} method="post">
-                    <input type="hidden" name="csrf_token" value="{/* $csrf_token */}" />
-
 
                     <div className="">
                       <label htmlFor="name" className="form-label">Nome</label>

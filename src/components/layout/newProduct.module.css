@@ -1,0 +1,46 @@
+.span{
+    font-style: italic;
+    font-weight: 700;
+    color: black;
+    text-shadow: 0 1px 3px aqua;
+}
+
+input, textarea{
+    box-shadow: 0 0 7px aqua;
+    outline-color: red;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.labelImg{
+    cursor: pointer;
+    text-shadow: 0 1px 3px red;
+    box-shadow: 0 0 5px aqua;
+}
+
+.labelImg:hover{
+    box-shadow: 0 0 10px red;
+}
+.buttonInvisible{
+    background-color: transparent;
+    border:0;
+    color: #fcfcfc;
+
+}
+
+button:hover{
+    color: #afadad;
+}
+
+a:hover{
+    color: #afadad;
+    text-decoration: none;
+}
+
+hr{
+    color: rgb(2, 137, 255);
+}
