@@ -74,13 +74,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 notas do editor{
 
+    quando puxar na pagina produtos é apenas os que estão com o ID do usuario sessionStorage!!
+    dps da pagina de produtos a proxima vai ser o header com dois logins e fazer a parte de cliente (semper que comprar tem que mandar put produto quantidade -1)
+    resolver toda parte de prdutos e dps fazer tabela.
+
     a fazer:
     front end:
-        terminar o perfil e ver pq não aparece nada na rota
         ver o home e deixar com produtos ja cadastrados de quem é o produto e cada pagina de um espeficifo com o id de produto.
+        implementar o delete do user.
 
     back end:
         terminar os controllers e as ações de ver por exemplo quantas vendas e ou quantos clientes e produtos.
+        fazer o de vendas e descobrir como pegar infos certas dos outros models.
         
 
 }

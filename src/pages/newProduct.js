@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Link } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from '../components/layout/newProduct.module.css'
@@ -14,11 +14,19 @@ const NewProduct = () => {
 
     // imagem do input
     const [imagemProduto, setImagemProduto] = useState(null);
+    const [imagemNome, setImagemNome] = useState("");
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            setImagemProduto(file);
+            // Nova lógica para converter imagem em Base64
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const base64Image = event.target.result;
+                setImagemProduto(base64Image); // substitua o arquivo pela string Base64
+                setImagemNome(file) // pra apesentar prop usuario do lado do input
+            };
+            reader.readAsDataURL(file);
         }
     };
 
@@ -39,6 +47,7 @@ const NewProduct = () => {
         try {
             console.log(name, preco, quantidade, descricao, usuarioId, imagemProduto);
 
+
             const response = await axios.post('http://localhost:5000/NewProduct',
                 {
                     nome: name,
@@ -50,8 +59,8 @@ const NewProduct = () => {
                 });
 
             if (response) {
-                console.log(response)
-                // window.location.href = '/produtos'
+                <Link to='/produtos'/>
+                window.location.href = '/produtos'
             } else {
                 console.log("falha no insert")
             }
@@ -69,20 +78,22 @@ const NewProduct = () => {
         }
     }
 
-        return (
-            <main className={`text-center container main`}>
-                <div className='d-flex justify-content-center mb-5'>
-                    <h1 className='text-center  me-3'>
-                        <span className={`${styles.span}`}>
-                            N O V O
-                        </span>
-                    </h1>
-                    <h1 className='text-center ms-3'>
-                        <span className={`${styles.span}`}>
-                            P R O D U T O
-                        </span>
-                    </h1>
-                </div>
+    return (
+        <main className={`text-center container main`}>
+            <div className='d-flex justify-content-center mb-2'>
+                <h1 className='text-center  me-3'>
+                    <span className={`${styles.span}`}>
+                        N O V O
+                    </span>
+                </h1>
+                <h1 className='text-center ms-3'>
+                    <span className={`${styles.span}`}>
+                        P R O D U T O
+                    </span>
+                </h1>
+            </div>
+
+            <div className={` rounded-4 mt-3 ${styles.borderContainer}`}>
 
                 <div className={`container container-fluid mt-2 mb-5`}>
                     <div className="row justify-content-center">
@@ -97,7 +108,7 @@ const NewProduct = () => {
                                 <hr className='col-6' />
                             </div>
 
-                            <form onSubmit={ handleCadastroProduto } method="post">
+                            <form onSubmit={handleCadastroProduto} method="post">
 
                                 <div className="row justify-content-center">
 
@@ -150,7 +161,7 @@ const NewProduct = () => {
 
                                         {imagemProduto ? (
                                             <label class={`custom-file-label border rounded-4 p-2  ${styles.labelImg}`}>
-                                                {imagemProduto.name}
+                                                {imagemNome.name}
                                             </label>
                                         ) : ("")
                                         }
@@ -166,7 +177,7 @@ const NewProduct = () => {
                                         />
                                     </div>
 
-                                    <div className='d-flex justify-content-center mt-4'>
+                                    <div className='d-flex justify-content-center mt-2'>
                                         <hr className='col-10' />
                                     </div>
 
@@ -182,8 +193,24 @@ const NewProduct = () => {
                         </div>
                     </div>
                 </div>
-            </main>
-        );
-    }
+            </div>
+        </main>
+    );
+}
 
-    export default NewProduct;
+export default NewProduct;
+
+// funcção base 64
+// https://www.youtube.com/watch?v=pfxd7L1kzio&list=TLPQMjgwMjIwMjRXCEteETnVMQ&index=4
+
+// function convertToBase64(file){
+//     return new Promise((resolve, reject ) => {
+//         const fileReader = new FileReader();
+//         fileReader.onload = () => {
+//             resolve(fileReader.result);
+//         };
+//         fileReader.onerror = (error) => {
+//             reject(error);
+//         };
+//     })
+// }

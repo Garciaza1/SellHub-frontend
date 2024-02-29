@@ -7,9 +7,7 @@ import session from '../helpers/session';
 
 
 function HomeLogged() {
-    
-    console.log(session());
-    
+        
     if (!session()) {
         window.location.href = '/login';
     }
