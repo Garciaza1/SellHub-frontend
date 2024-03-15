@@ -46,6 +46,7 @@ const Cadastro = () => {
         setLoggedIn(true);
 
         // Armazene o token e o user em sessionStorage
+        sessionStorage.setItem('tipo', "vendedor");
         sessionStorage.setItem('logged', isLoggedIn);
         sessionStorage.setItem('token', token_);
         sessionStorage.setItem('user', user);

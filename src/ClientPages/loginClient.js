@@ -4,7 +4,8 @@ import styles from '../components/layout/login.module.css';
 import axios from 'axios';
 import session from '../helpers/session';
 
-const Login = () => {
+const LoginClient = () => {
+    
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginMessage, setLoginMessage] = useState('');
@@ -14,20 +15,22 @@ const Login = () => {
 
     try {
       
-      const response = await axios.post('http://localhost:5000/UserLogin', {
+      const response = await axios.post('http://localhost:5000/ClientLogin', {
         email,
         senha: password
       });
 
       if (response) {
         const data = response.data;
-        const user = data.user;
+        const user = data.client;
+        console.log(user);
         const token_ = data.token;
         const dataMessage = data.message;
 
         setLoginMessage(dataMessage);
 
         // Armazene o token, o user e o estado de login em sessionStorage como strings
+        sessionStorage.setItem('tipo', "cliente");
         sessionStorage.setItem('logged', 'true'); // apenas string 'true'
         sessionStorage.setItem('token', token_);
         sessionStorage.setItem('user', JSON.stringify(user)); // tem q passar tudo na session como json
@@ -35,7 +38,7 @@ const Login = () => {
         console.log('Login foi um sucesso!');
 
         // Direcione o usuário para a página principal após o login bem-sucedido
-        window.location.href = '/home';
+        window.location.href = '/productsClient';
       } else {
         const errorData = response;
         console.error('Falha no login. Detalhes:', errorData);
@@ -50,7 +53,7 @@ const Login = () => {
 
   //verifica se esta logado
   if (session()) {
-    window.location.href = '/home';
+    window.location.href = '/productsClient';
   }
 
   return (
@@ -114,7 +117,7 @@ const Login = () => {
                   <div className={`my-3 text-center pt-2`}>
                     {loginMessage && <p>{loginMessage}</p>}
 
-                    <a href="">Não Tenho Cadastro</a>
+                    <a href="/cadastroClient">Não Tenho Cadastro</a>
 
 
                     {/* <div className={`pt-2`}>
@@ -132,4 +135,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginClient;

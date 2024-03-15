@@ -29,3 +29,30 @@
     font-size: x-large;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+
+/* um produto só */
+.row{
+    width: 100%;
+}
+
+select {
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    text-indent: 0.01px;
+    overflow: hidden;
+    /* Remove seta padrão do FireFox */
+    text-overflow: "";
+}
+
+.compra{
+    border-style: solid;
+    border-width: 1px;
+    border-color: aqua;
+    box-shadow: 0 0 5px red;
+}
+
+.text{
+    color: rgb(152, 175, 196);
+}

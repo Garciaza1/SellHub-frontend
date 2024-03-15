@@ -1,7 +1,7 @@
-import React from 'react'; //import { Link } from "react-router-dom"
+import React from 'react';
 import styles from './NavFooter.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faRightToBracket, faUserTie,faFaceSadCry,faChartLine} from '@fortawesome/free-solid-svg-icons'
+import { faRightToBracket, faUserTie, faFaceSadCry, faChartLine } from '@fortawesome/free-solid-svg-icons'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,6 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Navbar() {
 
     const user = JSON.parse(sessionStorage.getItem('user'));
+
+
 
 
 
@@ -32,9 +34,9 @@ function Navbar() {
                     ) : (
                         <div className="col-4 d-flex align-content-center p-3">
                             <a href="/">
-                            <FontAwesomeIcon icon={faChartLine} className='pe-5 h-50' />
-                               {/* { <img src={`.png`} alt="logo SellHub" height="46" className="me-3" />} */}
-                                </a>
+                                <FontAwesomeIcon icon={faChartLine} className='pe-5 h-50' />
+                                {/* { <img src={`.png`} alt="logo SellHub" height="46" className="me-3" />} */}
+                            </a>
                             <a href="/" style={{ textDecoration: 'none' }}>
                                 <h3>Sell Hub</h3>
                             </a>
@@ -50,9 +52,21 @@ function Navbar() {
                             <span style={{ fontStyle: 'italic' }}> {user.nome}</span>
                         </h2>
                     ) : (
-                        <h2>
-                            Bem-vindo(a) ao nosso site! Por favor, faça <a href='/Login' style={{ textDecoration: 'none' }}>login.</a>
-                        </h2>
+                        <div className='container text-center justify-content-center'>
+                            <h2>
+                                Bem-vindo(a) ao nosso site!
+                            </h2>
+                            <div>
+                                <span className='me-2'>
+                                    Quer vender ?
+                                </span>
+                                <a className='me-4' href='/cadastro' style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faUserTie} className='me-2' />Cadastro</a>
+                                <span className='me-2'>
+                                    Já é vendedor ?
+                                </span>
+                                <a className='' href='/login' style={{ textDecoration: 'none' }}><FontAwesomeIcon icon={faRightToBracket} className='me-2' />Login</a>
+                            </div>
+                        </div>
                     )}
                 </div>
 
@@ -64,23 +78,23 @@ function Navbar() {
                     <div className="col-2 d-flex">
                         <div className={`custom-dropdown pt-4 `}>
                             <a href='/perfil' type='dropdown' className={`mx-2 ${styles.buttonInvisible}`} style={{ width: '100%' }}>
-                            <FontAwesomeIcon icon={faUserTie} className='me-2' />
+                                <FontAwesomeIcon icon={faUserTie} className='me-2' />
                                 Perfil
                             </a>
                             <a href='/LogOut' type='dropdown' className={`mx-2 ${styles.buttonInvisible}`} style={{ width: '100%' }}>
-                            <FontAwesomeIcon icon={faFaceSadCry} className='me-2' />
+                                <FontAwesomeIcon icon={faFaceSadCry} className='me-2' />
                                 Sair
                             </a>
                         </div>
                     </div>
                 ) : (
                     <div className='col-2 pt-4 mt-2'>
-                        <a href="/login" className="p-2 ps-2 pe-2 pt-3" style={{ textDecoration: 'none' }}>
-                        <FontAwesomeIcon icon={faRightToBracket} className='me-2' />
+                        <a href="/loginClient" className="p-2 ps-2 pe-2 pt-3" style={{ textDecoration: 'none' }}>
+                            <FontAwesomeIcon icon={faRightToBracket} className='me-2' />
                             Entrar
                         </a>
-                        <a href="/cadastro" className="p-2 ps-2 pe-2 pt-3" style={{ textDecoration: 'none' }}>
-                        <FontAwesomeIcon icon={faUserTie} className='me-2' />
+                        <a href="/cadastroClient" className="p-2 ps-2 pe-2 pt-3" style={{ textDecoration: 'none' }}>
+                            <FontAwesomeIcon icon={faUserTie} className='me-2' />
                             Cadastrar
                         </a>
                     </div>
@@ -88,7 +102,6 @@ function Navbar() {
             </div>
         </div>
     )
-
 }
 
 export default Navbar;

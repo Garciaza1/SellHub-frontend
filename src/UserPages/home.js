@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Home = () => {
 
   const isLoggedIn = sessionStorage.getItem('logged') // Converta para booleano
-  const user = JSON.parse(sessionStorage.getItem('user')); // Converta de volta para objeto
+  const user = sessionStorage.getItem('user'); // Converta de volta para objeto
   
 
 

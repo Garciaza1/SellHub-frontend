@@ -8,8 +8,10 @@ const LogOut = () => {
         sessionStorage.removeItem('user')
         sessionStorage.removeItem('logged')
         sessionStorage.removeItem('token')
+        sessionStorage.removeItem('tipo')
         cookie.removeItem('userData')
         cookie.removeItem('userToken')
+        sessionStorage.clear();
 
     }
 
